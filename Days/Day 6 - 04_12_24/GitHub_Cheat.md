@@ -32,16 +32,7 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#python-basics">Python Basic</a></li>
-    <li><a href="#control-flow">Control Flow</a></li>
-    <li><a href="#functions">Functions</a></li>
-    <li><a href="#classes">Classes</a></li>
-    <li><a href="#exception-handling">Exception Handling</a></li>
-    <li><a href="#file-handling">File Handling</a></li>
-    <li><a href="#libraries">Libraries</a></li>
-    <li><a href="#list-comprehensions">List Comprehensions</a></li>
-    <li><a href="#lambda-functions">Lambda Functions</a></li>
-    <li><a href="#main">__Main__</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+ 
   </ol>
 </details>
 
@@ -52,7 +43,15 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Python Basics
+## Adding SSH Key
+
+* In Terminal enter the key generate commend:
+```py
+    
+```
+
+
+## Github Basics
 
 * Print Statment :
   
@@ -79,157 +78,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
     dict_var = {"Key1":"Value1","Key2":"Value2"}
 ```
 
-* Lists:
-```py
-    my_list = [1,2,3,4]
-    my_list.append(5) # Add an element
-    my_list[0] = 10 # Modify an element  
-```
-
-* Tuples:
-```py
-    my_tuple = (1,2,3)
-```
-
-* Dictionaries:
-```py
-    my_dict = {"name":"Alice","age":25}
-    my_dict["age"] = 26 # Modify Value
-```
-
 <p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
 
-## Control Flow
-* If Statement:
-```py
-    if x>10:
-        print(f'x is {x} which is greater than 10')
-    elif x==10:
-        print(f'x is {x} which is equal to 10')
-    else:
-        print(f'x is {x} which is less than 10')
-```
-* For Loop: 
-```py
-    for i in range(5):
-        print(i)
-```
-* While Loop:
-```py
-    count:int = 0
-    limit:int = 5
 
-    while count < limit:
-        print(count)
-        count += 1
-```
-
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## Functions
-* Defining a Function:
-```py
-    def greet(name):
-        return f'Hello {name}!'
-```
-* Calling a Function:
-```py
-    print(greet("Alice"))
-```
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## Classes
-* Defining a Class:
-```py
-    class Person:
-        def __init__(self,name,age):
-            self.,name = name
-            self.age = age
-
-        def greet(self):
-            return f'Hello, my name is {self.name}.'
-```
-* Creating and Instance:
-```py
-    person_1 = Person("Alice",30)
-    print(person_1.greet())
-```
-
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## Exception Handling
-* Try/Except:
-```py
-    try:
-            x = 1/0
-    except ZeroDivisionError:
-        print(f'Can not divide by zero')
-    finally:
-        print('This will always execute')
-```
-
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## File Handling
-* Reading a File:
-```py
-    with open('file.txt','r') as file:
-        content = file.read()
-        print(content)
-```
-* Writting a File:
-```py
-    with open('file.txt','w') as file:
-        file.write('Hello World')
-```
-
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## Libraries
-* Importing a Library:
-```py
-    import math
-    print(math.sqrt(16))
-```
-* Using Pandas:
-```py
-    import pandas as pd
-    df = pd.DataFrame({"A":[1,2],"B":[3,4]})
-    print(df)
-```
-* Using NumPy:
-```py
-    import numpy as np
-    array = np.array([1,2,3])
-    print(array.mean())
-```
-
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## List Comprehensions
-* Basic List Comprehension
-```py
-    squares = [x**2 for x in range(10)]
-```
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## Lambda Functions
-* Lambda Function
-```py
-    add = lambda x, y: x + y
-    print(add(5,3))
-```
-
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
-
-## main
-* dunder (double underscore) main Function
-```py
-    if __name__ == '__main__':
-        main()
-```
-
-<p align="right">(<a href="#Cheat_Sheet-top">back to top</a>)</p>
 
 ---
 
