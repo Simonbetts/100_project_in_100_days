@@ -1,0 +1,7 @@
+Name Value Consumption
+Scope 1000.00 2000
+VNA 10000.00 3000
+Probe1 100.00 200
+Probe2 100.00 200
+Probe3 100.00 200
+Drill 500.00 2000
