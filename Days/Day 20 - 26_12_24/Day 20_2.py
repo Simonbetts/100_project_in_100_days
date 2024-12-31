@@ -29,6 +29,8 @@ print(df.iloc[[0,1]])
 
 #Dataframe.loc[["row1"], ["column1"]]
 
+xpoints = df.loc[0, 'month_number']  # This was the solution i was looking for 
+
 
 # Insert data into the table
 data = [
