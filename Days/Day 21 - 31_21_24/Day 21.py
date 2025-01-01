@@ -41,7 +41,7 @@ total_units = df ['total_units'].tolist()
 total_profit = df ['total_profit'].tolist()
 
 
-
+plt.figure(1)
 plt.plot(month_number, total_profit)
 plt.xlabel("Month Number")
 plt.ylabel("Total Profit")
@@ -64,7 +64,7 @@ Line marker color as red
 Line width should be 3
 The line plot graph should look like this.
 """
-
+plt.figure(2)
 plt.plot(month_number, total_units, marker = 'o', linestyle = 'dotted', color = 'red',linewidth = '3',mfc = 'black')
 plt.xlabel("Month Number")
 plt.ylabel("Total Sold Units")
@@ -83,7 +83,7 @@ Display the number of units sold per month for each product using multiline plot
 The graph should look like this.
 
 """
-
+plt.figure(3)
 plt.plot(month_number,facecream, marker = 'o',linewidth = '3') 
 plt.plot(month_number,facewash, marker = 'o',linewidth = '3')
 plt.plot(month_number,toothpaste, marker = 'o',linewidth = '3') 
@@ -110,8 +110,20 @@ Also, add a grid in the plot. gridline style should “–“.
 
 The scatter plot should look like this.
 """
+plt.figure(4)
+plt.scatter(month_number,toothpaste, s = 100, label = 'Toothpaste Sales Data')
 
-### E4 ENTRE HERE
+plt.title('Sales Data (Toothpaste)')
+plt.xlabel("Month")
+plt.ylabel("Units Sold")
+
+plt.legend(loc="upper left")
+
+plt.grid(color = 'grey', linestyle = '--', linewidth = 1)
+plt.xticks(month_number)
+plt.yticks([4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000])
+
+plt.show()
 
 """
 Exercise 5: Read face cream and facewash product sales data and show it using the bar chart
@@ -119,30 +131,124 @@ The bar chart should display the number of units sold per month for each product
 
 The bar chart should look like this.
 """
-### E5 ENTRE HERE
+plt.figure(5)
+plt.bar(month_number,facecream, width= -0.25, label = 'Facecream', align='edge')
+plt.bar(month_number,facewash, width= 0.25, label = 'Facewash', align='edge')
+
+plt.title('Sales Data (Facecream and Facewash)')
+plt.xlabel("Month")
+plt.ylabel("Units Sold")
+
+plt.legend(loc="upper left")
+
+plt.grid(color = 'grey', linestyle = '--', linewidth = 1)
+plt.xticks(month_number)
+plt.yticks([0, 500, 1000, 1500, 2000, 2500, 3000, 3500])
+
+plt.show()
 
 """
 Exercise 6: Read sales data of bathing soap of all months and show it using a bar chart. Save this plot to your hard disk
+
+https://www.atlassian.com/data/notebook/how-to-save-a-plot-to-a-file-using-matplotlib
+
+savefig(fname, *, transparent=None, dpi='figure', format=None,
+        metadata=None, bbox_inches=None, pad_inches=0.1,
+        facecolor='auto', edgecolor='auto', backend=None,
+        **kwargs)
 """
-### E6 ENTRE HERE
+
+plt.figure(6)
+plt.bar(month_number,bathingsoap, label = 'Bathing Soap')
+
+plt.title('Sales Data (Bathing Soap)')
+plt.xlabel("Month")
+plt.ylabel("Units Sold")
+
+plt.grid(color = 'grey', linestyle = '--', linewidth = 1)
+plt.xticks(month_number)
+plt.yticks([0, 2000, 4000, 6000, 8000, 10000, 12000, 14000])
+plt.savefig('Figure_6.png',dpi = 300, transparent = False)
+plt.show()
+
+
 """
 Exercise 7: Read the total profit of each month and show it using the histogram to see the most common profit ranges
 """
-### E7 ENTRE HERE
+
+plt.figure(7)
+plt.hist(total_profit, label = 'Total Profit')
+
+plt.title('Profit Data')
+plt.xlabel("Profit Range (£)")
+plt.ylabel("Actual Profit (£)")
+
+plt.legend(loc="upper left")
+plt.yticks([0,1,2,3,4,5])
+
+plt.show()
 """
 Exercise 8: Calculate total sale data for last year for each product and show it using a Pie chart
 
 Note: In Pie chart display Number of units sold per year for each product in percentage.
 """
-### E8 ENTRE HERE
+
+labels = ["Facecream","Facewash","Toothpaste","Soap","Shampoo","Moisturizer"]
+salesData   = [df ['facecream'].sum(), df ['facewash'].sum(), df ['toothpaste'].sum(), 
+         df ['bathingsoap'].sum(), df ['shampoo'].sum(), df ['moisturizer'].sum()]
+
+plt.figure(8)
+plt.pie(salesData,labels=labels, autopct='%1.1f%%')
+plt.axis("equal")
+plt.legend(loc='lower right')
+plt.title('Sales data')
+
+plt.show()
 
 """
 Exercise 9: Read Bathing soap facewash of all months and display it using the Subplot
 """
-### E9 ENTRE HERE
+plt.figure(9)
+plt.subplot(2, 1, 1)
+plt.plot(month_number,bathingsoap,label = "Soap",color = 'black',marker = 'o',linewidth = '3')
+
+plt.title('Sales Data (Bath Soap)')
+plt.xticks(month_number)
+plt.yticks([7000,10000,12500])
+
+plt.subplot(2, 1, 2)
+plt.plot(month_number,facewash,label = "Facewash",color = 'red',marker = 'o',linewidth = '3')
+
+plt.title('Sales Data (Facewash)')
+plt.xlabel("Month")
+plt.ylabel("Sales in Units")
+
+plt.xticks(month_number)
+plt.yticks([1500,2000])
+
+plt.show()
 
 """
 Exercise Question 10: Read all product sales data and show it using the stack plot
 The Stack plot should look like this.
+
+plt.plot(month_number,facecream, label = "Facecream")
+plt.plot(month_number,facewash, label = "Facewash")
+plt.plot(month_number,toothpaste, label = "Toothpaste")
+plt.plot(month_number,bathingsoap, label = "Soap")
+plt.plot(month_number,shampoo, label = "Shampoo")
+plt.plot(month_number,moisturizer, label = "Moisturizer")
 """
-### E10 ENTRE HERE
+
+plt.figure(10)
+
+
+plt.stackplot(month_number,facecream,facewash,toothpaste,bathingsoap,shampoo,moisturizer,colors=['m','c','r','k','g','y'])
+
+plt.title('Sales Data')
+plt.xlabel("Month")
+plt.ylabel("Sales Data")
+
+plt.legend(labels = labels, loc = 'upper left')
+
+plt.show()
